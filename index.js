@@ -14,7 +14,6 @@ async function runExample() {
     // render here (output is in scope)
     const predictions = document.getElementById('predictions');
     predictions.innerHTML = `
-      <hr>Got an output Tensor:<br/>
       <table>
         <tr><td>Inside Temp</td>          <td id="c1td0">${output[0].toFixed(2)}</td></tr>
         <tr><td>Inside Humidity</td>      <td id="c1td1">${output[1].toFixed(2)}</td></tr>

@@ -17,13 +17,13 @@ import onnxmltools
 from skl2onnx.common.data_types import FloatTensorType
 
 # Parameters
-batch_size = 16
+batch_size = 32
 learning_rate = 0.0003
-N_epochs = 200
+N_epochs = 1000
 epsilon = 0.0001
 
 # Read Data
-path_data = 'Regression/all_data_merged.csv'
+path_data = 'all_data_merged.csv'
 temp_raw_data_df = pd.read_csv(path_data, delimiter=",")
 
 headers_list = temp_raw_data_df.columns.values.tolist()
@@ -187,7 +187,7 @@ output_names = ["output1"]
 torch.onnx.export(
         model,
         dummy_input,
-        "Regression/temperature_humidity_data.onnx",
+        "temperature_humidity_data.onnx",
         input_names = input_names,
         output_names = output_names,
         opset_version=15,

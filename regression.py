@@ -19,7 +19,7 @@ from skl2onnx.common.data_types import FloatTensorType
 # Parameters
 batch_size = 32
 learning_rate = 0.0003
-N_epochs = 1000
+N_epochs = 5000
 epsilon = 0.0001
 
 # Read Data
@@ -150,9 +150,9 @@ def training_loop(N_Epochs, model, loss_fn, opt):
         if epoch % 20 == 0:
             print(epoch, "loss=", loss)
 
-model = LinRegNet(x_means, x_deviations)
+# model = LinRegNet(x_means, x_deviations)
 # model = MLP_Net(x_means, x_deviations)
-# model = DL_Net(x_means, x_deviations)
+model = DL_Net(x_means, x_deviations)
 
 opt     = torch.optim.Adam(model.parameters(), lr=learning_rate)
 loss_fn = F.mse_loss
